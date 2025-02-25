@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Integration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Our Chatbot</h1>
+    <p>Click on the chat icon at the bottom right to start chatting.</p>
+
+    <!-- Rasa Webchat Integration -->
+    <script>
+        !(function () {
+            let e = document.createElement("script"),
+                t = document.head || document.getElementsByTagName("head")[0];
+            (e.src =
+                "https://cdn.jsdelivr.net/npm/rasa-webchat@0.11.5/lib/index.js"),
+                (e.async = !0),
+                (e.onload = () => {
+                    window.WebChat.default(
+                        {
+                            initPayload: "/start",
+                            customData: { language: "en" },
+                            socketUrl: "https://martin-expired-tropical-preference.trycloudflare.com/dialogflow/webhook/",
+                            title: "Chat with Us",
+                            subtitle: "We are here to help!",
+                            showCloseButton: true,
+                            inputTextFieldHint: "Type your message...",
+                            profileAvatar: "https://your-image-url.com/avatar.png",
+                            showMessageDate: true,
+                            params: {
+                                images: {
+                                    dims: { width: 300, height: 200 }
+                                },
+                                storage: "session"
+                            }
+                        },
+                        null
+                    );
+                }),
+                t.insertBefore(e, t.firstChild);
+        })();
+    </script>
+
+</body>
+</html>
