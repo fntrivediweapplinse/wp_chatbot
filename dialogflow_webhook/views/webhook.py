@@ -25,18 +25,18 @@ def dialogflow_webhook(request):
             response_data = {
                 "fulfillmentMessages": [
                     {
-                        "payload": {
-                            "richContent": [
-                                [
-                                    {
-                                        "type": "description",
-                                        "title": "Need Help?",
-                                        "text": [
-                                            "Click the link below to contact us:",
-                                            "[Visit Our Website](https://commons-candle-end-trim.trycloudflare.com/)"
-                                        ]
-                                    }
-                                ]
+                        "card": {
+                            "title": "Useful Links",
+                            "subtitle": "Pick one!",
+                            "buttons": [
+                                {
+                                    "text": "Site 1",
+                                    "postback": "https://site1.com"
+                                },
+                                {
+                                    "text": "Site 2",
+                                    "postback": "https://site2.com"
+                                }
                             ]
                         }
                     }

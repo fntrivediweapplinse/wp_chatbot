@@ -8,3 +8,7 @@ def get_bot_widget(request):
 
 def get_rasa_webchat(request):
     return render(request, 'rasa_webchat.html')
+
+
+def get_botcopy_widget(request):
+    return render(request, 'botcopy_bot.html')

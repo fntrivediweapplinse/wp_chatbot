@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.get_bot_widget,name='get_bot_widget'),
-    path('rasa/', views.get_rasa_webchat,name='get_rasa_widget')
+    path('rasa/', views.get_rasa_webchat,name='get_rasa_widget'),
+    path('botcopy/',views.get_botcopy_widget,name='get_botcopy_widget')
 ]
