@@ -1,6 +1,7 @@
 from django.urls import path
-from . import views
+from .views import webhook, test_db
 
 urlpatterns = [
-    path("webhook/", views.dialogflow_webhook, name="dialogflow_webhook"),
+    path("webhook/", webhook.dialogflow_webhook, name="dialogflow_webhook"),
+    path("checkdb/",test_db.check_db)
 ]
